@@ -6606,6 +6606,7 @@
       <Setting id="Split on environmental patterns" type="bool">True</Setting>
       <Setting id="Start on challenge start" type="bool">False</Setting>
       <Setting id="Reset on challenge stop" type="bool">False</Setting>
+      <Setting id="Split on eclipse environmental start" type="bool">False</Setting>
       <Setting id="Split on easter egg ending" type="bool">False</Setting>
       <Setting id="Enable random doors practice" type="bool">False</Setting>
       <Setting id="Override first text component with a Failed Panels count" type="bool">True</Setting>
