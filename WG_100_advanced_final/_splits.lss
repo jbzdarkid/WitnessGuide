@@ -12,8 +12,13 @@
     <Variables />
   </Metadata>
   <Offset>00:00:00</Offset>
-  <AttemptCount>0</AttemptCount>
-  <AttemptHistory />
+  <AttemptCount>6</AttemptCount>
+  <AttemptHistory>
+    <Attempt id="1" started="04/06/2020 01:32:28" isStartedSynced="True" ended="04/06/2020 01:50:46" isEndedSynced="True" />
+    <Attempt id="2" started="04/06/2020 01:54:18" isStartedSynced="True" ended="04/06/2020 01:54:38" isEndedSynced="True" />
+    <Attempt id="3" started="04/06/2020 01:54:46" isStartedSynced="True" ended="04/06/2020 01:54:52" isEndedSynced="True" />
+    <Attempt id="4" started="04/06/2020 01:54:54" isStartedSynced="True" ended="04/06/2020 01:55:22" isEndedSynced="True" />
+  </AttemptHistory>
   <Segments>
     <Segment>
       <Name>-Straight</Name>
@@ -6595,25 +6600,5 @@
       <SegmentHistory />
     </Segment>
   </Segments>
-  <AutoSplitterSettings>
-    <Version>1.5</Version>
-    <ScriptPath>C:\Program Files\LiveSplit_1.7.6\Components\LiveSplit.TheWitness2.asl</ScriptPath>
-    <Start>True</Start>
-    <Reset>True</Reset>
-    <Split>True</Split>
-    <CustomSettings>
-      <Setting id="Split on all panels (solving and non-solving)" type="bool">True</Setting>
-      <Setting id="Split on environmental patterns" type="bool">True</Setting>
-      <Setting id="Start on challenge start" type="bool">False</Setting>
-      <Setting id="Reset on challenge stop" type="bool">False</Setting>
-      <Setting id="Split on eclipse environmental start" type="bool">False</Setting>
-      <Setting id="Split on easter egg ending" type="bool">False</Setting>
-      <Setting id="Enable random doors practice" type="bool">False</Setting>
-      <Setting id="Override first text component with a Failed Panels count" type="bool">True</Setting>
-      <Setting id="configs" type="bool">True</Setting>
-      <Setting id="20 Challenges.witness_config" type="bool">False</Setting>
-      <Setting id="All Lasers.witness_config" type="bool">False</Setting>
-      <Setting id="sample.witness_config" type="bool">False</Setting>
-    </CustomSettings>
-  </AutoSplitterSettings>
+  <AutoSplitterSettings />
 </Run>
