@@ -1,11 +1,11 @@
 from pathlib import Path
 from PIL import Image
-from zipfile import ZipFile, ZIP_DEFLATED, ZIP_BZIP2, ZIP_LZMA
+from zipfile import ZipFile, ZIP_DEFLATED
 from progressbar import ProgressBar, Bar, Percentage
 
 guide_names = {
-  'WG_100_final': '100%',
-  'WG_100_advanced_final': '100% (advanced)',
+  'WG_100_final2': '100%',
+  'WG_100_advanced_final2': '100% (advanced)',
   'WG_all_discards': 'All Discarded Panels',
   'WG_all_discards_low': 'All Discarded Panels Low%',
   'WG_all_lasers_final': 'All Lasers',
@@ -15,25 +15,23 @@ guide_names = {
   'WG_any_desert_final': 'Any% (desert route)',
 }
 
-guides = {}
+TMP = Path('./tmp.png').resolve()
+
 for dir in Path('.').iterdir():
   if not dir.is_dir():
     continue
-  dir = dir.name
-  if not dir.startswith('WG_'):
+  guide = dir.name
+  if not guide.startswith('WG_'):
     continue
-  if dir not in guide_names:
-    print(f'Guide named {dir} skipped, missing proper name')
+  if guide not in guide_names:
+    print(f'Skipped folder {guide}')
     continue
-  guides[dir] = guide_names[dir] + '.zip'
+  name = guide_names[guide] + '.zip'
 
-TMP = Path('./tmp.png').resolve()
-for guide, name in guides.items():
   # mode=w: Modify existing files
-  # compression=ZIP_LZMA for maginally better compression
-  with ZipFile(name, mode='w', compression=ZIP_LZMA) as zip:
+  with ZipFile(name, mode='w', compression=ZIP_DEFLATED, compresslevel=9) as zip:
     files = list(Path(guide).iterdir())
-    bar = ProgressBar(maxval=len(files), widgets=[Bar('=', '[', ']'), ' ', Percentage()])
+    bar = ProgressBar(maxval=len(files), widgets=[Bar('=', '[', ']'), '"', name, '"'])
     bar.start()
     for i, file in enumerate(files):
       bar.update(i)
@@ -44,11 +42,10 @@ for guide, name in guides.items():
           print(e)
           print(f'Skipping file {file.name}, as it could not be opened.')
         if im.width == 1920 and im.height == 1080:
-          im = im.resize((720, 480))
+          im = im.resize((1280, 720))
           im.save(TMP, 'PNG')
           zip.write(TMP, file.name)
           continue
-      zip.write(file)
+      zip.write(file, file.name)
     bar.finish()
-  print(f'Wrote {name}')
 TMP.unlink()
