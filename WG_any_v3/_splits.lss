@@ -566,7 +566,7 @@
       <SegmentHistory />
     </Segment>
     <Segment>
-      <Name>-Elevator (2)</Name>
+      <Name>-Bunker Elevator (2)</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />
@@ -1306,19 +1306,28 @@
   </Segments>
   <AutoSplitterSettings>
     <Version>1.5</Version>
-    <ScriptPath>C:\Program Files\LiveSplit_1.7.6\Components\LiveSplit.TheWitness2.asl</ScriptPath>
+    <ScriptPath>C:\Program Files\LiveSplit\Components\LiveSplit.TheWitness2.asl</ScriptPath>
     <Start>True</Start>
     <Reset>True</Reset>
     <Split>True</Split>
     <CustomSettings>
       <Setting id="Split on all panels (solving and non-solving)" type="bool">True</Setting>
-      <Setting id="Split on environmental patterns" type="bool">True</Setting>
-      <Setting id="Start on challenge start" type="bool">False</Setting>
+      <Setting id="Split on environmental patterns" type="bool">False</Setting>
+      <Setting id="Split on audio logs" type="bool">False</Setting>
+      <Setting id="Only start on challenge start" type="bool">False</Setting>
       <Setting id="Reset on challenge stop" type="bool">False</Setting>
       <Setting id="Split on eclipse environmental start" type="bool">False</Setting>
-      <Setting id="Split on easter egg ending" type="bool">True</Setting>
+      <Setting id="Split on easter egg ending" type="bool">False</Setting>
       <Setting id="Override first text component with a Failed Panels count" type="bool">False</Setting>
+      <Setting id="Override first text component with a Completed Audio Logs count" type="bool">False</Setting>
       <Setting id="configs" type="bool">False</Setting>
+      <Setting id="All Lasers.witness_config" type="bool">False</Setting>
+      <Setting id="100.witness_config" type="bool">False</Setting>
+      <Setting id="20 Challenges.witness_config" type="bool">False</Setting>
+      <Setting id="Any.witness_config" type="bool">False</Setting>
+      <Setting id="Boat Timing.witness_config" type="bool">False</Setting>
+      <Setting id="sample.witness_config" type="bool">False</Setting>
+      <Setting id="TheWitnessAnyPercent.witness_config" type="bool">False</Setting>
     </CustomSettings>
   </AutoSplitterSettings>
 </Run>

@@ -4,15 +4,13 @@ from zipfile import ZipFile, ZIP_DEFLATED
 from progressbar import ProgressBar, Bar, Percentage
 
 guide_names = {
-  'WG_100_final2': '100%',
   'WG_100_advanced_final2': '100% (advanced)',
+  'WG_100_final2': '100%',
   'WG_all_discards': 'All Discarded Panels',
   'WG_all_discards_low': 'All Discarded Panels Low%',
   'WG_all_lasers_final': 'All Lasers',
-  'WG_any_final': 'Any%',
-  'WG_any_final2': 'Any% (v2)',
   'WG_any_v3': 'Any% (v3)',
-  'WG_any_desert_final': 'Any% (desert route)',
+  'WG_low_final': 'Low%',
 }
 
 TMP = Path('./tmp.png').resolve()
@@ -31,7 +29,7 @@ for dir in Path('.').iterdir():
   # mode=w: Modify existing files
   with ZipFile(name, mode='w', compression=ZIP_DEFLATED, compresslevel=9) as zip:
     files = list(Path(guide).iterdir())
-    bar = ProgressBar(maxval=len(files), widgets=[Bar('=', '[', ']'), '"', name, '"'])
+    bar = ProgressBar(maxval=len(files), widgets=[Bar('=', '[', ']'), ' ', name])
     bar.start()
     for i, file in enumerate(files):
       bar.update(i)

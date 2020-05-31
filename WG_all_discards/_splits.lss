@@ -1483,21 +1483,5 @@
       <SegmentHistory />
     </Segment>
   </Segments>
-  <AutoSplitterSettings>
-    <Version>1.5</Version>
-    <ScriptPath>C:\Livesplit\Components\LiveSplit.TheWitness2.asl</ScriptPath>
-    <Start>True</Start>
-    <Reset>True</Reset>
-    <Split>True</Split>
-    <CustomSettings>
-      <Setting id="Split on all panels (solving and non-solving)" type="bool">False</Setting>
-      <Setting id="Split on environmental patterns" type="bool">False</Setting>
-      <Setting id="Only start on challenge start" type="bool">False</Setting>
-      <Setting id="Reset on challenge stop" type="bool">False</Setting>
-      <Setting id="Split on eclipse environmental start" type="bool">False</Setting>
-      <Setting id="Split on easter egg ending" type="bool">True</Setting>
-      <Setting id="Override first text component with a Failed Panels count" type="bool">False</Setting>
-      <Setting id="configs" type="bool">False</Setting>
-    </CustomSettings>
-  </AutoSplitterSettings>
+  <AutoSplitterSettings />
 </Run>
