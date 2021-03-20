@@ -1,6 +1,6 @@
 # Speedrunning route splits and pictures for The Witness
 
-For an in-browser image host, go to https://jbzdarkid.github.io/WitnessGuide/guide.html
+For an in-browser image host, go to https://jbzdarkid.github.io/WitnessGuide/index.html
 
 # [Main board categories](https://speedrun.com/thewitness)
 * [Any%](https://github.com/jbzdarkid/WitnessGuide/releases/download/v1/Any.v3.zip)
