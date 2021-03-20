@@ -19,6 +19,7 @@
       window.onload = function() {
         var guideChooser = document.getElementById('guideChooser')
         var nextPicture = document.getElementById('nextPicture')
+        var downloadSplits = document.getElementById('downloadSplits')
 
         for (var guide of Object.keys(window.guides)) {
           var option = document.createElement('option')
@@ -30,6 +31,10 @@
         nextPicture.setAttribute('index', 0)
         nextPicture.src = getImage('Any%', 0)
         nextPicture.style.display = null
+
+        downloadSplits.onclick = function() {
+          window.open('https://github.com/jbzdarkid/WitnessGuide/raw/main/' + window.guides[guideChooser.value] + '/_splits.lss')
+        }
 
         // Function that runs when you change guides
         guideChooser.onchange = function() {
@@ -51,7 +56,10 @@
   </head>
   <body>
     <div style="display: flex; flex-direction: column; height: 100%">
-      <select id="guideChooser" style="margin: auto; font-size: 64px"></select>
+      <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly">
+        <select id="guideChooser" style="font-size: 64px"></select>
+        <button id="downloadSplits" style="font-size: 64px">Download Splits</button>
+      </div>
       <img id="nextPicture" style="display:none" />
     </div>
   </body>
