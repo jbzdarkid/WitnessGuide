@@ -57,7 +57,7 @@
         }
 
         // Function that runs when you click on the image
-        nextPicture.onclick = function(event) {
+        nextPicture.onpointerdown = function(event) {
           if (nextPicture.style.opacity == 0.5) return // Already loading an image
 
           var isRightClick = event.which === 3 || !!(event.touches && event.touches.length > 1)
