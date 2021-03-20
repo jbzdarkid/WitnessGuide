@@ -15,6 +15,7 @@
         var url = 'https://github.com/jbzdarkid/WitnessGuide/raw/main/' + window.guides[guideName] + '/'
         return url + index.toString().padLeft('0', 5) + '.png'
       }
+
       window.onload = function() {
         var guideChooser = document.getElementById('guideChooser')
         var nextPicture = document.getElementById('nextPicture')
