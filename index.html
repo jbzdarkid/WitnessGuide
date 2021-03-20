@@ -10,34 +10,39 @@
         'All Discarded Panels': 'WG_all_discards',
         'All Discarded Panels Low%': 'WG_all_discards_low',
       }
+
+      function getImage(guideName, index) {
+        var url = 'https://github.com/jbzdarkid/WitnessGuide/raw/main/' + window.guides[guideName] + '/'
+        return url + index.toString().padLeft('0', 5) + '.png'
+      }
       window.onload = function() {
         var guideChooser = document.getElementById('guideChooser')
         var nextPicture = document.getElementById('nextPicture')
 
         for (var guide of Object.keys(window.guides)) {
-          var option = document.createElementById('option')
+          var option = document.createElement('option')
           option.innerText = guide
         }
         // Defaults on page load
         guideChooser.value = 'Any%'
         nextPicture.setAttribute('index', 0)
-        nextPicture.src = '/WG_any_v3/00000.png'
+        nextPicture.src = getImage('Any%', 0)
         nextPicture.style.display = null
 
         // Function that runs when you change guides
         guideChooser.onchange = function() {
           nextPicture.setAttribute('index', 0)
-          nextPicture.src = '/' + window.guides[guideChooser.value] + '00000.png'
+          nextPicture.src = getImage(guideChooser.value, 0)
         }
 
         // Function that runs when you click on the image
         nextPicture.onclick = function(event) {
           var isRightClick = event.which === 3 || (event.touches && event.touches.length > 1)
           var index = nextPicture.getAttribute('index')
-          nextIndex = nextIndex + (isRightClick ? -1 : 1)
-          if (nextIndex < 0) nextIndex = 0
-          nextPicture.setAttribute('index', nextIndex)
-          nextPicture.src = '/' + window.guides[guideChooser.value] + '/' + nextIndex.toString().padLeft('0', 5) + '.png'
+          index = index + (isRightClick ? -1 : 1)
+          if (index < 0) index = 0
+          nextPicture.setAttribute('index', index)
+          nextPicture.src = getImage(guideChooser.value, index)
         }
       }
     </script>
