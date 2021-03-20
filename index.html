@@ -23,8 +23,12 @@
         'All Discarded Panels Low%': 'WG_all_discards_low',
       }
 
-      function getImage(guideName, index) {
-        return window.guides[guideName] + '/' + index.toString().padStart(5, '0') + '.png'
+      function showImage(guideName, index) {
+        var nextPicture = document.getElementById('nextPicture')
+        nextPicture.setAttribute('index', index)
+        nextPicture.src = window.guides[guideName] + '/' + index.toString().padStart(5, '0') + '.png'
+        var preloadPicture = document.getElementById('preloadPicture')
+        preloadPicture.src = window.guides[guideName] + '/' + (index+1).toString().padStart(5, '0') + '.png'
       }
 
       window.onload = function() {
@@ -39,8 +43,7 @@
         }
         // Defaults on page load
         guideChooser.value = 'Any%'
-        nextPicture.setAttribute('index', 0)
-        nextPicture.src = getImage('Any%', 0)
+        showImage('Any%', 0)
         nextPicture.style.display = null
 
         downloadSplits.onclick = function() {
@@ -49,8 +52,7 @@
 
         // Function that runs when you change guides
         guideChooser.onchange = function() {
-          nextPicture.setAttribute('index', 0)
-          nextPicture.src = getImage(guideChooser.value, 0)
+          showImage(guideChooser.value, 0)
         }
 
         // Function that runs when you click on the image
@@ -61,8 +63,7 @@
           var index = parseInt(nextPicture.getAttribute('index'))
           index = index + (isRightClick ? -1 : 1)
           if (index < 0) index = 0
-          nextPicture.setAttribute('index', index)
-          nextPicture.src = getImage(guideChooser.value, index)
+          showImage(guideChooser.value, index)
           nextPicture.style.opacity = 0.5
         }
         nextPicture.oncontextmenu = function(event) {
@@ -81,6 +82,7 @@
         <button id="downloadSplits" style="font-size: 64px">Download Splits</button>
       </div>
       <img id="nextPicture" style="display:none; object-fit: contain" />
+      <img id="preloadPicture" style="display:none />
     </div>
   </body>
 </html>
