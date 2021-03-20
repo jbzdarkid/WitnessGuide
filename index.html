@@ -13,8 +13,9 @@
 
       function getImage(guideName, index) {
         var url = 'https://github.com/jbzdarkid/WitnessGuide/raw/main/' + window.guides[guideName] + '/'
-        return url + index.toString().padLeft('0', 5) + '.png'
+        return url + index.toString().padStart(5, '0') + '.png'
       }
+
       window.onload = function() {
         var guideChooser = document.getElementById('guideChooser')
         var nextPicture = document.getElementById('nextPicture')
@@ -22,6 +23,7 @@
         for (var guide of Object.keys(window.guides)) {
           var option = document.createElement('option')
           option.innerText = guide
+          guideChooser.appendChild(option)
         }
         // Defaults on page load
         guideChooser.value = 'Any%'
@@ -37,8 +39,8 @@
 
         // Function that runs when you click on the image
         nextPicture.onclick = function(event) {
-          var isRightClick = event.which === 3 || (event.touches && event.touches.length > 1)
-          var index = nextPicture.getAttribute('index')
+          var isRightClick = event.which === 3 || !!(event.touches && event.touches.length > 1)
+          var index = parseInt(nextPicture.getAttribute('index'))
           index = index + (isRightClick ? -1 : 1)
           if (index < 0) index = 0
           nextPicture.setAttribute('index', index)
@@ -48,7 +50,9 @@
     </script>
   </head>
   <body>
-    <select id="guideChooser"></select>
-    <img id="nextPicture" style="display:none" />
+    <div style="display: flex; flex-direction: column; height: 100%">
+      <select id="guideChooser" style="margin: auto; font-size: 64px"></select>
+      <img id="nextPicture" style="display:none" />
+    </div>
   </body>
 </html>
