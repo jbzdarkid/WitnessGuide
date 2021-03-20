@@ -51,6 +51,9 @@
           nextPicture.setAttribute('index', index)
           nextPicture.src = getImage(guideChooser.value, index)
         }
+        nextPicture.oncontextmenu = function(event) {
+          event.preventDefault()
+        }
       }
     </script>
   </head>
