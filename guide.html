@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <script class="text/javascript">
+      window.guides = {
+        '100% (advanced)': 'WG_100_advanced_final2',
+        '100%': 'WG_100_final2',
+        'All Discarded Panels': 'WG_all_discards',
+        'All Discarded Panels Low%': 'WG_all_discards_low',
+        'All Lasers': 'WG_all_lasers_final',
+        'Any% (v3)': 'WG_any_v3',
+        'Low%': 'WG_low_final',
+      }
+      window.onload = function() {
+        var guideChooser = document.getElementById('guideChooser')
+        var nextPicture = document.getElementById('nextPicture')
+
+        for (var guide of window.guides) {
+          var option = document.createElementById('option')
+          option.innerText = guide
+          option.value = window.guides[guide]
+        }
+        guideChooser.value = '' // Forces onchange to fire for any selection
+        guideChooser.onchange = function() {
+          nextPicture.setAttribute('index', 0)
+          nextPicture.src = '/' + guideChooser.value + '00000.png'
+          nextPicture.style.display = null
+        }
+        nextPicture.setAttribute('index', 0)
+        nextPicture.onclick = function(event) {
+          var isRightClick = event.which === 3 || (event.touches && event.touches.length > 1)
+          var index = nextPicture.getAttribute('index')
+          nextIndex = nextIndex + (isRightClick ? -1 : 1)
+          if (nextIndex < 0) nextIndex = 0
+          nextPicture.setAttribute('index', nextIndex)
+          nextPicture.src = '/' + guideChooser.value + nextIndex.toString().padLeft('0', 5) + '.png'
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <select id="guideChooser"></select>
+    <img id="nextPicture" style="display:none">
+  </body>
+</html>
