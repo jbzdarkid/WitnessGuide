@@ -23,6 +23,7 @@
         for (var guide of Object.keys(window.guides)) {
           var option = document.createElement('option')
           option.innerText = guide
+          guideChooser.appendChild(option)
         }
         // Defaults on page load
         guideChooser.value = 'Any%'
@@ -49,7 +50,9 @@
     </script>
   </head>
   <body>
-    <select id="guideChooser"></select>
-    <img id="nextPicture" style="display:none" />
+    <div style="display: flex; flex-direction: column; height: 100%">
+      <select id="guideChooser" style="margin: auto; font-size: 64px"></select>
+      <img id="nextPicture" style="display:none" />
+    </div>
   </body>
 </html>
