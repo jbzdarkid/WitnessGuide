@@ -21,6 +21,10 @@
         var nextPicture = document.getElementById('nextPicture')
         var downloadSplits = document.getElementById('downloadSplits')
 
+        var preloadPicture = document.createElement('IMG')
+        document.body.appendChild(preloadPicture)
+        preloadPicture.style.display = 'none'
+
         for (var guide of Object.keys(window.guides)) {
           var option = document.createElement('option')
           option.innerText = guide
@@ -32,6 +36,8 @@
         nextPicture.src = getImage('Any%', 0)
         nextPicture.style.display = null
 
+        preloadPicture.src = getImage('Any%', 1)
+
         downloadSplits.onclick = function() {
           window.open('https://github.com/jbzdarkid/WitnessGuide/raw/main/' + window.guides[guideChooser.value] + '/_splits.lss')
         }
@@ -40,12 +46,13 @@
         guideChooser.onchange = function() {
           nextPicture.setAttribute('index', 0)
           nextPicture.src = getImage(guideChooser.value, 0)
+          preloadPicture.src = getImage(guideChooser.value, 1)
         }
 
         // Function that runs when you click on the image
         nextPicture.onclick = function(event) {
           if (nextPicture.style.opacity == 0.5) return // Already loading an image
-          
+
           var isRightClick = event.which === 3 || !!(event.touches && event.touches.length > 1)
           var index = parseInt(nextPicture.getAttribute('index'))
           index = index + (isRightClick ? -1 : 1)
@@ -53,6 +60,8 @@
           nextPicture.setAttribute('index', index)
           nextPicture.src = getImage(guideChooser.value, index)
           nextPicture.style.opacity = 0.5
+
+          preloadPicture.src = getImage(guideChooser.value, index + 1)
         }
         nextPicture.oncontextmenu = function(event) {
           event.preventDefault()
