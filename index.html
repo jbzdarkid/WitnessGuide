@@ -39,7 +39,7 @@
 
         // Function that runs when you click on the image
         nextPicture.onclick = function(event) {
-          var isRightClick = event.which === 3 || (event.touches && event.touches.length > 1)
+          var isRightClick = event.which === 3 || !!(event.touches && event.touches.length > 1)
           var index = parseInt(nextPicture.getAttribute('index'))
           index = index + (isRightClick ? -1 : 1)
           if (index < 0) index = 0
