@@ -1,7 +1,7 @@
 from pathlib import Path
 from PIL import Image
 from zipfile import ZipFile, ZIP_DEFLATED
-from progressbar import ProgressBar, Bar, Percentage
+from progressbar import ProgressBar, Bar
 
 guide_names = {
   'WG_100_advanced_final2': '100% (advanced)',
