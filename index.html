@@ -19,6 +19,7 @@
         '100%': 'WG_100_final2',
         '100% (advanced)': 'WG_100_advanced_final2',
         'Low% (117, obsolete)': 'WG_low_final',
+        'Low%': 'WG_low_111_final',
         'All Discarded Panels': 'WG_all_discards',
         'All Discarded Panels Low%': 'WG_all_discards_low',
       }
@@ -58,7 +59,7 @@
         // Function that runs when you click on the image
         nextPicture.onclick = function(event) {
           if (nextPicture.style.opacity == 0.5) return // Already loading an image
-          
+
           var isRightClick = event.which === 3 || !!(event.touches && event.touches.length > 1)
           var index = parseInt(nextPicture.getAttribute('index'))
           index = index + (isRightClick ? -1 : 1)

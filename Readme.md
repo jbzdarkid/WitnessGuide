@@ -8,7 +8,7 @@ For an in-browser image host, go to https://jbzdarkid.github.io/WitnessGuide/ind
 * [100%](https://github.com/jbzdarkid/WitnessGuide/releases/download/v1/100.zip)
 * [100% (advanced)](https://github.com/jbzdarkid/WitnessGuide/releases/download/v1/100.advanced.zip)
 <br>**Note:** 99.8% generally follows the same route as 100%, just without Eclipse.
-* ~~Low%~~
+* [Low%](https://github.com/jbzdarkid/WitnessGuide/releases/download/v2/Low.zip)
 
 # Miscellaneous and [Extension categories](https://www.speedrun.com/thewitness_catext)
 * [Low% (117, Obsolete)](https://github.com/jbzdarkid/WitnessGuide/releases/download/v1/Low.zip)

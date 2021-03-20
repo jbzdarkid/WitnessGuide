@@ -10,7 +10,8 @@ guide_names = {
   'WG_all_discards_low': 'All Discarded Panels Low%',
   'WG_all_lasers_final': 'All Lasers',
   'WG_any_v3': 'Any% (v3)',
-  'WG_low_final': 'Low%',
+  'WG_low_final': 'Low% (117, obsolete)',
+  'WG_low_111_final': 'Low%',
 }
 
 TMP = Path('./tmp.png').resolve()
