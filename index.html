@@ -12,8 +12,7 @@
       }
 
       function getImage(guideName, index) {
-        var url = 'https://raw.githubusercontent.com/jbzdarkid/WitnessGuide/main/'
-        return url + index.toString().padStart(5, '0') + '.png'
+        return window.guides[guideName] + '/' + index.toString().padStart(5, '0') + '.png'
       }
 
       window.onload = function() {
