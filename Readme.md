@@ -5,8 +5,8 @@ For an in-browser image host, go to https://jbzdarkid.github.io/WitnessGuide/ind
 # [Main board categories](https://speedrun.com/thewitness)
 * [Any%](https://github.com/jbzdarkid/WitnessGuide/releases/download/v1/Any.v3.zip)
 * [All Lasers](https://github.com/jbzdarkid/WitnessGuide/releases/download/v1/All.Lasers.zip)
-* [100%](https://github.com/jbzdarkid/WitnessGuide/releases/download/v1/100.zip)
-* [100% (advanced)](https://github.com/jbzdarkid/WitnessGuide/releases/download/v1/100.advanced.zip)
+* [100%](https://github.com/jbzdarkid/WitnessGuide/releases/download/v3/100.zip)
+* [100% (advanced)](https://github.com/jbzdarkid/WitnessGuide/releases/download/v3/100.advanced.zip)
 <br>**Note:** 99.8% generally follows the same route as 100%, just without Eclipse.
 * [Low%](https://github.com/jbzdarkid/WitnessGuide/releases/download/v2/Low.zip)
 
