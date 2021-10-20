@@ -26,7 +26,7 @@
 
       function showImage(guideName, index) {
         var nextPicture = document.getElementById('nextPicture')
-        nextPicture.setAttribute('index', index)
+        nextPicture.setAttribute('newIndex', index)
         nextPicture.src = window.guides[guideName] + '/' + index.toString().padStart(5, '0') + '.png'
         var preloadPicture = document.getElementById('preloadPicture')
         preloadPicture.src = window.guides[guideName] + '/' + (index+1).toString().padStart(5, '0') + '.png'
@@ -45,7 +45,7 @@
         // Defaults on page load
         guideChooser.value = 'Any%'
         showImage('Any%', 0)
-        nextPicture.style.display = null
+        nextPicture.style.height = document.body.clientHeight - getComputedStyle(downloadSplits).height
 
         downloadSplits.onclick = function() {
           window.open('https://github.com/jbzdarkid/WitnessGuide/raw/main/' + window.guides[guideChooser.value] + '/_splits.lss')
@@ -71,19 +71,21 @@
           event.preventDefault()
         }
         nextPicture.onload = function() {
+          nextPicture.setAttribute('index', nextPicture.getAttribute('index'))
+          nextPicture.style.opacity = 1.0
+        }
+        nextPicture.onerror = function() {
           nextPicture.style.opacity = 1.0
         }
       }
     </script>
   </head>
   <body class="noselect">
-    <div style="display: flex; flex-direction: column; flex-wrap: wrap; height: 100%">
-      <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly">
-        <select id="guideChooser" style="font-size: 64px"></select>
-        <button id="downloadSplits" style="font-size: 64px">Download Splits</button>
-      </div>
-      <img id="nextPicture" style="display:none; object-fit: contain" />
-      <img id="preloadPicture" style="display:none" />
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly">
+      <select id="guideChooser" style="font-size: 64px"></select>
+      <button id="downloadSplits" style="font-size: 64px">Download Splits</button>
     </div>
+    <img id="nextPicture" style="object-fit: contain; width = 100%" />
+    <img id="preloadPicture" style="display: none" />
   </body>
 </html>
