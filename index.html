@@ -45,7 +45,7 @@
         // Defaults on page load
         guideChooser.value = 'Any%'
         showImage('Any%', 0)
-        nextPicture.style.height = document.body.clientHeight - getComputedStyle(downloadSplits).height
+        nextPicture.style.height = document.body.clientHeight - parseInt(getComputedStyle(downloadSplits).height)
 
         downloadSplits.onclick = function() {
           window.open('https://github.com/jbzdarkid/WitnessGuide/raw/main/' + window.guides[guideChooser.value] + '/_splits.lss')
