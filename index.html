@@ -71,7 +71,7 @@
           event.preventDefault()
         }
         nextPicture.onload = function() {
-          nextPicture.setAttribute('index', nextPicture.getAttribute('nextIndex'))
+          nextPicture.setAttribute('index', nextPicture.getAttribute('newIndex'))
           nextPicture.style.opacity = 1.0
         }
         nextPicture.onerror = function() {
@@ -85,7 +85,7 @@
       <select id="guideChooser" style="font-size: 64px"></select>
       <button id="downloadSplits" style="font-size: 64px">Download Splits</button>
     </div>
-    <img id="nextPicture" index="0" style="object-fit: contain; width: 100%" />
+    <img id="nextPicture" newIndex="0" style="object-fit: contain; width: 100%" />
     <img id="preloadPicture" style="display: none" />
   </body>
 </html>
