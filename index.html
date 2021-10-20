@@ -71,7 +71,7 @@
           event.preventDefault()
         }
         nextPicture.onload = function() {
-          nextPicture.setAttribute('index', nextPicture.getAttribute('index'))
+          nextPicture.setAttribute('index', nextPicture.getAttribute('nextIndex'))
           nextPicture.style.opacity = 1.0
         }
         nextPicture.onerror = function() {
