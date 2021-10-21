@@ -59,7 +59,7 @@
         nextPicture.onpointerdown = function(event) {
           if (nextPicture.style.opacity == 0.5) return // Already loading an image
 
-          if (window.clickAction != null)  window.clickAction.clearTimeout()
+          if (window.clickAction != null)  window.clearTimeout(window.clickAction)
           window.clickAction = setTimeout(function() {
             window.clickAction = null
 
