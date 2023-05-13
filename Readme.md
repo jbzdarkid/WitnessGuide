@@ -6,7 +6,7 @@ For an in-browser image host, go to https://jbzdarkid.github.io/WitnessGuide/ind
   <tr>
     <td colspan="3"><a href="https://speedrun.com/thewitness">Main board categories</a></td>
   </tr><tr>
-    <td>Any%</td>
+    <td>7 Lasers (old any%)</td>
     <td><a href="https://github.com/jbzdarkid/WitnessGuide/releases/download/v1/Any.v3.zip">Pictures</a></td>
     <td><a href="https://raw.githubusercontent.com/jbzdarkid/WitnessGuide/main/WG_any_v3/_splits.lss">Splits</a></td>
   </tr><tr>
