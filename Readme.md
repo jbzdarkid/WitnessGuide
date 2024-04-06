@@ -19,7 +19,7 @@ For an in-browser image host, go to https://jbzdarkid.github.io/WitnessGuide/ind
     <td><a href="https://raw.githubusercontent.com/jbzdarkid/WitnessGuide/main/WG_100_final2/_splits.lss">Splits</a></td>
   </tr><tr>
     <td>100% (advanced)</td>
-    <td><a href="https://github.com/jbzdarkid/WitnessGuide/releases/download/v3/100.advanced.zipp">Pictures</a></td>
+    <td><a href="https://github.com/jbzdarkid/WitnessGuide/releases/download/v3/100.advanced.zip">Pictures</a></td>
     <td><a href="https://raw.githubusercontent.com/jbzdarkid/WitnessGuide/main/WG_100_advanced_final2/_splits.lss">Splits</a></td>
   </tr><tr>
     <td colspan="3"><i>Note: 99.8% generally follows the same route as 100%, just without Eclipse.</i></td>
